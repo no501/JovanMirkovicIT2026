@@ -1,4 +1,3 @@
-// Otvara i zatvara navigaciju, uz ažuriranje ARIA stanja dugmeta.
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("nav");
 
@@ -16,7 +15,6 @@ navigation.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
 });
 
-// Priprema linkova i podrška za deljenje stranice.
 const shareUrl = encodeURIComponent(window.location.href);
 const facebookLink = document.querySelector(".share-facebook");
 const linkedInLink = document.querySelector(".share-linkedin");
