@@ -1,4 +1,4 @@
-﻿# Google Analytics 4
+# Google Analytics 4
 
 - Property: Urban Coffee (ID `565762003`)
 - Web Data Stream: Urban Coffee Website (ID `16408763649`)

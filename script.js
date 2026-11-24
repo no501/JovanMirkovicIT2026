@@ -1,30 +1,38 @@
-﻿// Mobilna navigacija i održavanje ARIA stanja dugmeta.
-const button = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
-button.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
-    button.setAttribute("aria-expanded", String(isOpen));
+// Otvara i zatvara navigaciju, uz ažuriranje ARIA stanja dugmeta.
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector("nav");
+
+function closeMenu() {
+    navigation.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+}
+
+menuButton.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
 });
-document.querySelectorAll("nav a").forEach((link) =>
-    link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        button.setAttribute("aria-expanded", "false");
-    }),
-);
-// Formiranje URL-ova za deljenje aktuelne stranice.
-const shareUrl = encodeURIComponent(location.href);
-document.querySelector(".share-facebook").href =
-    "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
-document.querySelector(".share-linkedin").href =
-    "https://www.linkedin.com/sharing/share-offsite/?url=" + shareUrl;
-// Koristi sistemski dijalog za deljenje kada je dostupan; inače kopira URL.
-document.querySelector(".share-native").addEventListener("click", async () => {
+
+navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+});
+
+// Priprema linkova i podrška za deljenje stranice.
+const shareUrl = encodeURIComponent(window.location.href);
+const facebookLink = document.querySelector(".share-facebook");
+const linkedInLink = document.querySelector(".share-linkedin");
+const nativeShareButton = document.querySelector(".share-native");
+
+facebookLink.href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+linkedInLink.href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+
+nativeShareButton.addEventListener("click", async () => {
     if (navigator.share) {
         await navigator.share({
             title: "Urban Coffee Novi Sad",
-            url: location.href,
+            url: window.location.href,
         });
-    } else {
-        await navigator.clipboard.writeText(location.href);
+        return;
     }
+
+    await navigator.clipboard.writeText(window.location.href);
 });

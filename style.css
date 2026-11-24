@@ -1,7 +1,6 @@
-﻿/* Osnovne promenljive boja i globalna pravila */
+/* Osnovne promenljive boja i globalna pravila */
 :root {
     --cream: #f6f0e7;
-    --beige: #d7c2a8;
     --brown: #2b1b14;
     --gold: #b67a45;
 }
@@ -196,7 +195,6 @@ footer {
     .contact {
         grid-template-columns: 1fr;
     }
-    /* Cenovnik i kartice menija */
     .menu-grid {
         grid-template-columns: 1fr;
     }
