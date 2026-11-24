@@ -66,7 +66,7 @@ nav a:hover {
     align-items: center;
     background:
         linear-gradient(90deg, rgba(25, 15, 10, 0.8), rgba(25, 15, 10, 0.15)),
-        url("assets/images/urban-coffee-interior.png") center/cover;
+        url("assets/images/urban-coffee-interior.jpg") center/cover;
 }
 .hero-copy {
     max-width: 650px;
@@ -213,4 +213,19 @@ footer {
         margin: 0;
         padding: 120px 7% 60px;
     }
+}
+.share {
+    text-align: center;
+    background: #f0e5d7;
+}
+.share-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.share-native {
+    border: 0;
+    font: inherit;
+    cursor: pointer;
 }
