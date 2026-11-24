@@ -1,6 +1,6 @@
-﻿# GA4 integracija
+# GA4 integracija
 
-U `index.html`, neposredno pre `</head>`, uneti sledeÄ‡i kod tek nakon Å¡to vlasnik projekta kreira GA4 property i dobije stvarni Measurement ID. Ne koristiti izmiÅ¡ljenu statistiku.
+U `index.html`, neposredno pre `</head>`, uneti sledeći kod tek nakon što vlasnik projekta kreira GA4 property i dobije stvarni Measurement ID. Ne koristiti izmišljenu statistiku.
 
 ```html
 <script
@@ -17,4 +17,4 @@ U `index.html`, neposredno pre `</head>`, uneti sledeÄ‡i kod tek nakon Å¡to
 </script>
 ```
 
-Dokaz za dokumentaciju: snimak ekrana GA4 Realtime izveÅ¡taja sa otvorenim javnim sajtom. Ova stavka ostaje za vlasnika naloga.
+Dokaz za dokumentaciju: snimak ekrana GA4 Realtime izveštaja sa otvorenim javnim sajtom. Ova stavka ostaje za vlasnika naloga.
